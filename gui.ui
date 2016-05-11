@@ -54,6 +54,7 @@
     <addaction name="cut"/>
     <addaction name="separator"/>
     <addaction name="addRow"/>
+    <addaction name="duplicateRow"/>
     <addaction name="removeRow"/>
     <addaction name="separator"/>
     <addaction name="redo"/>
@@ -141,6 +142,14 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="duplicateRow">
+   <property name="text">
+    <string>Duplicate Row</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
    </property>
   </action>
  </widget>

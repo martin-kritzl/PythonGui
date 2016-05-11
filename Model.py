@@ -1,4 +1,4 @@
-from PySide.QtCore import QAbstractTableModel, Qt, SIGNAL, QObject
+from PySide.QtCore import QAbstractTableModel, Qt, SIGNAL, QObject, QModelIndex
 
 
 class TableModel(QAbstractTableModel):
@@ -34,8 +34,26 @@ class TableModel(QAbstractTableModel):
         return len(self.content)
 
     def setData(self, index, value, role=Qt.EditRole):
+        self.beginResetModel()
         self.content[index.row()][index.column()] = value
-        QObject.emit(self, SIGNAL(""), index, index)
+        self.endResetModel()
+
+    def addRow(self, index):
+        self.beginInsertRows(QModelIndex(), index, index)
+        self.content.insert(index, [""] * len(self.header))
+        self.endInsertRows()
+
+    def removeRows(self, index, amount=1):
+        self.beginRemoveRows(QModelIndex(), index, index+amount-1)
+        i = 0
+        for i in range(0,amount):
+            self.content.pop(index+i)
+        self.endRemoveRows()
+
+    def dupplicateRow(self, index):
+        self.beginInsertRows(QModelIndex(), index, index)
+        self.content.insert(index+1, self.content[index])
+        self.endInsertRows()
 
     def flags(self, index):
         return Qt.ItemIsSelectable | Qt.ItemIsEditable | Qt.ItemIsEnabled
