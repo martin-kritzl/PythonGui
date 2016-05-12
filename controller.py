@@ -2,8 +2,8 @@ from PySide.QtGui import QMainWindow, QApplication, QFileDialog, QUndoStack
 import sys
 from CSVHandler import CSVHandler
 from Delegate import ItemDelegate
-from Model import TableModel
-from command import AddRowCommand, RemoveRowsCommand, DuplicateRowCommand, EditCommand
+from TableModel import TableModel
+from Command import AddRowCommand, RemoveRowsCommand, DuplicateRowCommand, EditCommand
 import gui
 
 
@@ -15,6 +15,7 @@ class Controller(QMainWindow):
     def __init__(self, parent=None):
         """
         Initializes the gui, undoStack, tableModel, tableView and the csvHandler
+
         :param parent: The parent node
         :return: new Controller
         """
@@ -37,6 +38,7 @@ class Controller(QMainWindow):
     def connectUi(self):
         """
         Connects the defined menu-entries with functions
+
         :return: None
         """
         self.form.open.triggered.connect(self.open)
@@ -55,6 +57,7 @@ class Controller(QMainWindow):
         """
         This function pushes the given command to the undoStack.
         So the command will be scheduled and can be undone with the command pattern
+
         :param cmd: The Command that should be done
         :param name: The name this command has
         :return: None
@@ -68,6 +71,7 @@ class Controller(QMainWindow):
         """
         Opens a file-manager where the user can choose an file to open.
         The content fill be filled in the model.
+
         :return: None
         """
         path = QFileDialog.getOpenFileName()[0]
@@ -78,6 +82,7 @@ class Controller(QMainWindow):
     def save(self):
         """
         Saves the tablemodel to the same location
+
         :return: None
         """
         self.handler.saveFile(self.model.accessor, self.model.getHeaderAndContent())
@@ -86,6 +91,7 @@ class Controller(QMainWindow):
         """
         Saves the tableModel to a new location. In a file-manager the user
         could choose the destination
+
         :return: None
         """
         path = QFileDialog.getSaveFileName()[0]
@@ -96,6 +102,7 @@ class Controller(QMainWindow):
     def getFirstSelectedIndex(self):
         """
         Returns the first selected index of the selected cells.
+
         :return: QModelIndex of the first selected index
         """
         return self.form.tableView.selectionModel().selectedIndexes()[0]
@@ -103,6 +110,7 @@ class Controller(QMainWindow):
     def getClipboard(self):
         """
         Returns the text saved in the clipboard
+
         :return: The text in the clipboard
         """
         clipboard = QApplication.clipboard()
@@ -111,6 +119,7 @@ class Controller(QMainWindow):
     def setClipboard(self, delete=False):
         """
         Sets the clipboard to the actual selected cell.
+
         :param delete: Specifies if the cell should be empty after coping
         :return: None
         """
@@ -122,6 +131,7 @@ class Controller(QMainWindow):
     def copy(self):
         """
         Copies the actual selected cell to the clipboard.
+
         :return: None
         """
         self.setClipboard()
@@ -129,6 +139,7 @@ class Controller(QMainWindow):
     def cut(self):
         """
         Cuts the actual selected cell to the clipboard.
+
         :return: None
         """
         self.setClipboard(True)
@@ -136,6 +147,7 @@ class Controller(QMainWindow):
     def paste(self):
         """
         Pastes the clipboard to the actual selected cell.
+
         :return: None
         """
         self.pushCommand(EditCommand(self.model, self.getFirstSelectedIndex(), self.getClipboard()),"Pasted Text")
@@ -143,6 +155,7 @@ class Controller(QMainWindow):
     def redo(self):
         """
         Redo to the next command
+
         :return: None
         """
         self.undoStack.redo()
@@ -151,6 +164,7 @@ class Controller(QMainWindow):
     def undo(self):
         """
         Undo the actual command
+
         :return: None
         """
         self.undoStack.undo()
@@ -159,6 +173,7 @@ class Controller(QMainWindow):
     def changeUndoRedoMenu(self):
         """
         Changes the menu-entry for redo and undo. So the user can see what the last and next command is.
+
         :return:
         """
         undo = "Undo"
@@ -173,6 +188,7 @@ class Controller(QMainWindow):
     def getSelection(self):
         """
         Returns the row index of selection and the amount.
+
         :return: First selected row index and amount
         """
         selection = self.form.tableView.selectionModel().selectedIndexes()
@@ -182,6 +198,7 @@ class Controller(QMainWindow):
     def addRow(self):
         """
         Adds a row to the table
+
         :return: None
         """
         index, amount = self.getSelection()
@@ -190,6 +207,7 @@ class Controller(QMainWindow):
     def duplicateRow(self):
         """
         Duplicates the selected row
+
         :return: None
         """
         index, amount = self.getSelection()
@@ -198,13 +216,15 @@ class Controller(QMainWindow):
     def removeRow(self):
         """
         Removes the selected rows
+
         :return: None
         """
         index, amount = self.getSelection()
         self.pushCommand(RemoveRowsCommand(self.model, index, amount), "Removed row(s)")
 
 # Essential for running the application
-app = QApplication(sys.argv)
-c = Controller()
-c.show()
-sys.exit(app.exec_())
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    c = Controller()
+    c.show()
+    sys.exit(app.exec_())

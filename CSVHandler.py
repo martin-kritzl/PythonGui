@@ -3,11 +3,12 @@ import csv
 
 class CSVHandler(object):
     """
-    This class is used to read and write a csv-file
+    This class is used to read and write a csv-file.
     """
     def getFile(self, path):
         """
-        Returns the content of the file
+        Returns the content of the file.
+
         :param path: The path and name of the file
         :return: The content as an array of rows. The rows are also arrays with the cells
         """
@@ -20,7 +21,8 @@ class CSVHandler(object):
 
     def saveFile(self, path, content):
         """
-        Writes the given content to a csv-file
+        Writes the given content to a csv-file.
+
         :param path: The path and name of the file
         :param content: The content that should be writen
         :return: None

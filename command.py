@@ -10,6 +10,7 @@ class EditCommand(QUndoCommand):
     def __init__(self, model, index, newValue=None):
         """
         Initializes a new EditCommand
+
         :param model: The model of the tableView
         :param index: The QModelIndex of the cell
         :param newValue: Optional new value (can be set later)
@@ -24,6 +25,7 @@ class EditCommand(QUndoCommand):
     def undo(self):
         """
         Undo the EditCommand
+
         :return: None
         """
         self.newValue = self.model.data(self.index)
@@ -32,6 +34,7 @@ class EditCommand(QUndoCommand):
     def redo(self):
         """
         Redo the EditCommand
+
         :return: None
         """
         self.oldValue = self.model.data(self.index)
@@ -44,6 +47,7 @@ class AddRowCommand(QUndoCommand):
     def __init__(self, model, index):
         """
         Initializes a new AddRowCommand
+
         :param model: The model of the tableView
         :param index: The index of the row
         :return: new Command
@@ -55,6 +59,7 @@ class AddRowCommand(QUndoCommand):
     def undo(self):
         """
         Undo the AddRowCommand
+
         :return: None
         """
         self.model.removeRows(self.index)
@@ -62,6 +67,7 @@ class AddRowCommand(QUndoCommand):
     def redo(self):
         """
         Redo the AddRowCommand
+
         :return: None
         """
         self.model.addRow(self.index)
@@ -74,6 +80,7 @@ class RemoveRowsCommand(QUndoCommand):
     def __init__(self, model, index, amount):
         """
         Initializes a new RemoveRowCommand
+
         :param model: The model of the tableView
         :param index: The index of the row
         :param amount: The number of rows that should be deleted
@@ -88,6 +95,7 @@ class RemoveRowsCommand(QUndoCommand):
     def undo(self):
         """
         Undo the RemoveRowCommand
+
         :return: None
         """
         self.model.setHeaderAndContent(self.oldModel.getHeaderAndContent())
@@ -95,6 +103,7 @@ class RemoveRowsCommand(QUndoCommand):
     def redo(self):
         """
         Redo the RemoveRowCommand
+
         :return: None
         """
         # hard copy of the actual model
@@ -108,6 +117,7 @@ class DuplicateRowCommand(QUndoCommand):
     def __init__(self, model, index):
         """
         Initializes a new DuplicateRowCommand
+
         :param model: The model of the tableView
         :param index: The index of the row
         :return: new Command
@@ -119,6 +129,7 @@ class DuplicateRowCommand(QUndoCommand):
     def undo(self):
         """
         Undo the DuplicateRowCommand
+
         :return: None
         """
         self.model.removeRows(self.index+1)
@@ -126,6 +137,7 @@ class DuplicateRowCommand(QUndoCommand):
     def redo(self):
         """
         Redo the DuplicateRowCommand
+
         :return: None
         """
         self.model.dupplicateRow(self.index)
