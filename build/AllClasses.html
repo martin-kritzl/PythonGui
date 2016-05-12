@@ -1,0 +1,987 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>All classes are listed here &mdash; PythonQt 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="PythonQt 1.0 documentation" href="index.html" />
+    <link rel="prev" title="Welcome to PythonQt’s documentation!" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-Command">
+<span id="all-classes-are-listed-here"></span><h1>All classes are listed here<a class="headerlink" href="#module-Command" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="Command.EditCommand">
+<em class="property">class </em><code class="descclassname">Command.</code><code class="descname">EditCommand</code><span class="sig-paren">(</span><em>model</em>, <em>index</em>, <em>newValue=None</em><span class="sig-paren">)</span><a class="headerlink" href="#Command.EditCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class is used for editing one specific cell.
+It is also used from the class ItemDelegate.</p>
+<dl class="method">
+<dt id="Command.EditCommand.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>model</em>, <em>index</em>, <em>newValue=None</em><span class="sig-paren">)</span><a class="headerlink" href="#Command.EditCommand.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes a new EditCommand</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> &#8211; The model of the tableView</li>
+<li><strong>index</strong> &#8211; The QModelIndex of the cell</li>
+<li><strong>newValue</strong> &#8211; Optional new value (can be set later)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">new Command</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Command.EditCommand.redo">
+<code class="descname">redo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Command.EditCommand.redo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Redo the EditCommand</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Command.EditCommand.undo">
+<code class="descname">undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Command.EditCommand.undo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Undo the EditCommand</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Command.AddRowCommand">
+<em class="property">class </em><code class="descclassname">Command.</code><code class="descname">AddRowCommand</code><span class="sig-paren">(</span><em>model</em>, <em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#Command.AddRowCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class is used for adding an empty cell.</p>
+<dl class="method">
+<dt id="Command.AddRowCommand.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>model</em>, <em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#Command.AddRowCommand.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes a new AddRowCommand</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> &#8211; The model of the tableView</li>
+<li><strong>index</strong> &#8211; The index of the row</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">new Command</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Command.AddRowCommand.redo">
+<code class="descname">redo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Command.AddRowCommand.redo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Redo the AddRowCommand</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Command.AddRowCommand.undo">
+<code class="descname">undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Command.AddRowCommand.undo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Undo the AddRowCommand</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Command.RemoveRowsCommand">
+<em class="property">class </em><code class="descclassname">Command.</code><code class="descname">RemoveRowsCommand</code><span class="sig-paren">(</span><em>model</em>, <em>index</em>, <em>amount</em><span class="sig-paren">)</span><a class="headerlink" href="#Command.RemoveRowsCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class is used for removing one ore more rows.
+Saving all changes would be to difficult so the whole model is saved</p>
+<dl class="method">
+<dt id="Command.RemoveRowsCommand.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>model</em>, <em>index</em>, <em>amount</em><span class="sig-paren">)</span><a class="headerlink" href="#Command.RemoveRowsCommand.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes a new RemoveRowCommand</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> &#8211; The model of the tableView</li>
+<li><strong>index</strong> &#8211; The index of the row</li>
+<li><strong>amount</strong> &#8211; The number of rows that should be deleted</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">new Command</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Command.RemoveRowsCommand.redo">
+<code class="descname">redo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Command.RemoveRowsCommand.redo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Redo the RemoveRowCommand</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Command.RemoveRowsCommand.undo">
+<code class="descname">undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Command.RemoveRowsCommand.undo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Undo the RemoveRowCommand</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Command.DuplicateRowCommand">
+<em class="property">class </em><code class="descclassname">Command.</code><code class="descname">DuplicateRowCommand</code><span class="sig-paren">(</span><em>model</em>, <em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#Command.DuplicateRowCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class is used for duplicating one row.</p>
+<dl class="method">
+<dt id="Command.DuplicateRowCommand.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>model</em>, <em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#Command.DuplicateRowCommand.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes a new DuplicateRowCommand</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> &#8211; The model of the tableView</li>
+<li><strong>index</strong> &#8211; The index of the row</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">new Command</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Command.DuplicateRowCommand.redo">
+<code class="descname">redo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Command.DuplicateRowCommand.redo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Redo the DuplicateRowCommand</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Command.DuplicateRowCommand.undo">
+<code class="descname">undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Command.DuplicateRowCommand.undo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Undo the DuplicateRowCommand</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-Controller"></span><dl class="class">
+<dt id="Controller.Controller">
+<em class="property">class </em><code class="descclassname">Controller.</code><code class="descname">Controller</code><span class="sig-paren">(</span><em>parent=None</em><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Controller" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class is used to connect the gui and the model. All logical
+tasks are done here.</p>
+<dl class="method">
+<dt id="Controller.Controller.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>parent=None</em><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Controller.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the gui, undoStack, tableModel, tableView and the csvHandler</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>parent</strong> &#8211; The parent node</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">new Controller</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Controller.Controller.addRow">
+<code class="descname">addRow</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Controller.addRow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a row to the table</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Controller.Controller.changeUndoRedoMenu">
+<code class="descname">changeUndoRedoMenu</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Controller.changeUndoRedoMenu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the menu-entry for redo and undo. So the user can see what the last and next command is.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Controller.Controller.connectUi">
+<code class="descname">connectUi</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Controller.connectUi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connects the defined menu-entries with functions</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Controller.Controller.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Controller.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copies the actual selected cell to the clipboard.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Controller.Controller.cut">
+<code class="descname">cut</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Controller.cut" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cuts the actual selected cell to the clipboard.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Controller.Controller.duplicateRow">
+<code class="descname">duplicateRow</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Controller.duplicateRow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Duplicates the selected row</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Controller.Controller.getClipboard">
+<code class="descname">getClipboard</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Controller.getClipboard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the text saved in the clipboard</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The text in the clipboard</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Controller.Controller.getFirstSelectedIndex">
+<code class="descname">getFirstSelectedIndex</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Controller.getFirstSelectedIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the first selected index of the selected cells.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">QModelIndex of the first selected index</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Controller.Controller.getSelection">
+<code class="descname">getSelection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Controller.getSelection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the row index of selection and the amount.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">First selected row index and amount</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Controller.Controller.open">
+<code class="descname">open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Controller.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Opens a file-manager where the user can choose an file to open.
+The content fill be filled in the model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Controller.Controller.paste">
+<code class="descname">paste</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Controller.paste" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pastes the clipboard to the actual selected cell.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Controller.Controller.pushCommand">
+<code class="descname">pushCommand</code><span class="sig-paren">(</span><em>cmd</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Controller.pushCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function pushes the given command to the undoStack.
+So the command will be scheduled and can be undone with the command pattern</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>cmd</strong> &#8211; The Command that should be done</li>
+<li><strong>name</strong> &#8211; The name this command has</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Controller.Controller.redo">
+<code class="descname">redo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Controller.redo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Redo to the next command</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Controller.Controller.removeRow">
+<code class="descname">removeRow</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Controller.removeRow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the selected rows</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Controller.Controller.save">
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Controller.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the tablemodel to the same location</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Controller.Controller.saveAs">
+<code class="descname">saveAs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Controller.saveAs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the tableModel to a new location. In a file-manager the user
+could choose the destination</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Controller.Controller.setClipboard">
+<code class="descname">setClipboard</code><span class="sig-paren">(</span><em>delete=False</em><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Controller.setClipboard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the clipboard to the actual selected cell.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>delete</strong> &#8211; Specifies if the cell should be empty after coping</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Controller.Controller.undo">
+<code class="descname">undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Controller.undo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Undo the actual command</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-CSVHandler"></span><dl class="class">
+<dt id="CSVHandler.CSVHandler">
+<em class="property">class </em><code class="descclassname">CSVHandler.</code><code class="descname">CSVHandler</code><a class="headerlink" href="#CSVHandler.CSVHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class is used to read and write a csv-file.</p>
+<dl class="method">
+<dt id="CSVHandler.CSVHandler.getFile">
+<code class="descname">getFile</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#CSVHandler.CSVHandler.getFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the content of the file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> &#8211; The path and name of the file</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The content as an array of rows. The rows are also arrays with the cells</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="CSVHandler.CSVHandler.saveFile">
+<code class="descname">saveFile</code><span class="sig-paren">(</span><em>path</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#CSVHandler.CSVHandler.saveFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes the given content to a csv-file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>path</strong> &#8211; The path and name of the file</li>
+<li><strong>content</strong> &#8211; The content that should be writen</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-Delegate"></span><dl class="class">
+<dt id="Delegate.ItemDelegate">
+<em class="property">class </em><code class="descclassname">Delegate.</code><code class="descname">ItemDelegate</code><span class="sig-paren">(</span><em>undoStack</em>, <em>updatefunc</em><span class="sig-paren">)</span><a class="headerlink" href="#Delegate.ItemDelegate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows a delegation of a cell editing to this class. So the command pattern could be
+implemented.</p>
+<dl class="method">
+<dt id="Delegate.ItemDelegate.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>undoStack</em>, <em>updatefunc</em><span class="sig-paren">)</span><a class="headerlink" href="#Delegate.ItemDelegate.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ititializes the ItemDelegate</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>undoStack</strong> &#8211; The undoStack of the table</li>
+<li><strong>updatefunc</strong> &#8211; The function that should be called when a cell was edited.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The ItemDelegate</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Delegate.ItemDelegate.createEditor">
+<code class="descname">createEditor</code><span class="sig-paren">(</span><em>QWidget</em>, <em>QStyleOptionViewItem</em>, <em>QModelIndex</em><span class="sig-paren">)</span><a class="headerlink" href="#Delegate.ItemDelegate.createEditor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the editor for editing a cell</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>QWidget</strong> &#8211; The tableView</li>
+<li><strong>QStyleOptionViewItem</strong> &#8211; None</li>
+<li><strong>QModelIndex</strong> &#8211; The QModelIndex of the edited cell</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">QLineEdit - The editor</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Delegate.ItemDelegate.editorEvent">
+<code class="descname">editorEvent</code><span class="sig-paren">(</span><em>QEvent</em>, <em>QAbstractItemModel</em>, <em>QStyleOptionViewItem</em>, <em>QModelIndex</em><span class="sig-paren">)</span><a class="headerlink" href="#Delegate.ItemDelegate.editorEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new EditCommand for the changing value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>QEvent</strong> &#8211; The event</li>
+<li><strong>QAbstractItemModel</strong> &#8211; The model of the tableView</li>
+<li><strong>QStyleOptionViewItem</strong> &#8211; None</li>
+<li><strong>QModelIndex</strong> &#8211; The QModelIndex of the edited cell</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Delegate.ItemDelegate.setModelData">
+<code class="descname">setModelData</code><span class="sig-paren">(</span><em>editor</em>, <em>model</em>, <em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#Delegate.ItemDelegate.setModelData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the new value of the cell.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>editor</strong> &#8211; The tableView</li>
+<li><strong>model</strong> &#8211; The model of the tableView</li>
+<li><strong>index</strong> &#8211; The QModelIndex of the edited cell</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-TableModel"></span><dl class="class">
+<dt id="TableModel.TableModel">
+<em class="property">class </em><code class="descclassname">TableModel.</code><code class="descname">TableModel</code><span class="sig-paren">(</span><em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#TableModel.TableModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class is used to save the content of a tableView.</p>
+<dl class="method">
+<dt id="TableModel.TableModel.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#TableModel.TableModel.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the TableModel</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>parent</strong> &#8211; The parent node</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The TableModel</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="TableModel.TableModel.addRow">
+<code class="descname">addRow</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#TableModel.TableModel.addRow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an emtpy row to the content on the specified index.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>index</strong> &#8211; The index where the row should be inserted</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="TableModel.TableModel.columnCount">
+<code class="descname">columnCount</code><span class="sig-paren">(</span><em>parent=None</em><span class="sig-paren">)</span><a class="headerlink" href="#TableModel.TableModel.columnCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the column count.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>parent</strong> &#8211; The parent node</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the column count</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="TableModel.TableModel.data">
+<code class="descname">data</code><span class="sig-paren">(</span><em>index</em>, <em>role=PySide.QtCore.Qt.ItemDataRole.DisplayRole</em><span class="sig-paren">)</span><a class="headerlink" href="#TableModel.TableModel.data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the data with the specified QModelIndex</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>index</strong> &#8211; QModelIndex of the cell</li>
+<li><strong>role</strong> &#8211; The role of access</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the content of the cell</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="TableModel.TableModel.dupplicateRow">
+<code class="descname">dupplicateRow</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#TableModel.TableModel.dupplicateRow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Duplicates the row with the given index.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>index</strong> &#8211; The index of the row</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="TableModel.TableModel.flags">
+<code class="descname">flags</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#TableModel.TableModel.flags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the flags of a cell</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>index</strong> &#8211; QModelIndex of a cell</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the flags of a cell</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="TableModel.TableModel.getHeaderAndContent">
+<code class="descname">getHeaderAndContent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#TableModel.TableModel.getHeaderAndContent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the Header an the content.
+The first array is the header the other ones the content.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Header and Content as an Array</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="TableModel.TableModel.headerData">
+<code class="descname">headerData</code><span class="sig-paren">(</span><em>section</em>, <em>orientation</em>, <em>role=PySide.QtCore.Qt.ItemDataRole.DisplayRole</em><span class="sig-paren">)</span><a class="headerlink" href="#TableModel.TableModel.headerData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the Header.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>section</strong> &#8211; The index column of the header</li>
+<li><strong>orientation</strong> &#8211; The orientation of the header</li>
+<li><strong>role</strong> &#8211; The role of access</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The Header</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="TableModel.TableModel.removeRows">
+<code class="descname">removeRows</code><span class="sig-paren">(</span><em>index</em>, <em>amount=1</em><span class="sig-paren">)</span><a class="headerlink" href="#TableModel.TableModel.removeRows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the rows from index to index+amount.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>index</strong> &#8211; Index of the first row</li>
+<li><strong>amount</strong> &#8211; How much rows should be deleted</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="TableModel.TableModel.rowCount">
+<code class="descname">rowCount</code><span class="sig-paren">(</span><em>parent=None</em><span class="sig-paren">)</span><a class="headerlink" href="#TableModel.TableModel.rowCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the row count</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>parent</strong> &#8211; The parent node</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the row count</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="TableModel.TableModel.setData">
+<code class="descname">setData</code><span class="sig-paren">(</span><em>index</em>, <em>value</em>, <em>role=PySide.QtCore.Qt.ItemDataRole.EditRole</em><span class="sig-paren">)</span><a class="headerlink" href="#TableModel.TableModel.setData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the value of an cell with the specified QModelIndex</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>index</strong> &#8211; QModelIndex of the cell</li>
+<li><strong>value</strong> &#8211; The new value</li>
+<li><strong>role</strong> &#8211; The role of access</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="TableModel.TableModel.setHeaderAndContent">
+<code class="descname">setHeaderAndContent</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#TableModel.TableModel.setHeaderAndContent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the Header an the content with the given data.
+The first array is the header the other ones the content.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> &#8211; Header and Content as an Array</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="TableModel.TableModel.sort">
+<code class="descname">sort</code><span class="sig-paren">(</span><em>col</em>, <em>order</em><span class="sig-paren">)</span><a class="headerlink" href="#TableModel.TableModel.sort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make it possible to sort the content.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>col</strong> &#8211; index of column</li>
+<li><strong>order</strong> &#8211; The order</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to PythonQt&#8217;s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/AllClasses.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, mkritzl.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      
+      |
+      <a href="_sources/AllClasses.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
